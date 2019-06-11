@@ -21,40 +21,42 @@ class Header extends React.Component {
   };
   render() {
     return (
-      <div className="headerContainer">
-        <header>
-          <h1 className="headerName">YHH-PHX</h1>
-          {!this.props.profile.user ? null : (
-            <div className="welcomeContainer">
-              <p className="welcomeHeader">
-                Welcome {this.props.profile.user.first_name}!
-              </p>
-              <button className="logoutButton" onClick={this.logout}>
-                Logout
-              </button>
-            </div>
-          )}
-          <button
-            onClick={() => {
-              this.setState({
-                showMenu: !this.state.showMenu
-              });
-            }}
-            className="menuButton"
-          >
-            Menu <MdMenu />
-          </button>
-        </header>
+      <div>
+        <div className="headerContainer">
+          <header>
+            <h1 className="headerName">YHH-PHX</h1>
+            {!this.props.profile.user ? null : (
+              <div className="welcomeContainer">
+                <p className="welcomeHeader">
+                  Welcome {this.props.profile.user.first_name}!
+                </p>
+                <button className="logoutButton" onClick={this.logout}>
+                  Logout
+                </button>
+              </div>
+            )}
+            <button
+              onClick={() => {
+                this.setState({
+                  showMenu: !this.state.showMenu
+                });
+              }}
+              className="menuButton"
+            >
+              Menu <MdMenu />
+            </button>
+          </header>
+        </div>
         <div>
           {!this.state.showMenu ? (
-            <nav className="headerLinks">
+            <div className="headerLinks">
               <NavLink exact to="/">
                 Home
               </NavLink>
               <NavLink to="/events_dir">Events</NavLink>
               <NavLink to="/current_user">Profile</NavLink>
               <NavLink to="/contact">Contact</NavLink>
-            </nav>
+            </div>
           ) : null}
         </div>
       </div>

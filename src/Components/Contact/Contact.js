@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Contact.css";
 
 class Contact extends Component {
   constructor(props) {
@@ -7,18 +8,20 @@ class Contact extends Component {
   }
   render() {
     return (
-      <div>
-        <div>
-          <h2>
-            If you need to contactthe adminsters of this website, please fill
+      <div className="mainContainerContact">
+        <div className="contactContainer">
+          <h2 className="messageInfo">
+            If you need to contact the adminsters of this website, please fill
             out the form below, and we will get back to you as soon as possible!{" "}
           </h2>
-          <h1>Name:</h1>
-          <input />
-          <h1>Email:</h1>
-          <input />
-          <h1>Message:</h1>
-          <input />
+          <input placeholder="Name" />
+          <input placeholder="Email" />
+          <input
+            type="textarea"
+            className="contactMessage"
+            placeholder="Message"
+          />
+          <button className="sendContactButton">Send</button>
         </div>
       </div>
     );

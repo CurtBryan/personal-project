@@ -1,7 +1,7 @@
 .headerContainer {
   min-height: 8vh;
   max-height: 30vh;
-  max-width: 1920px;
+  /* max-width: 1920px; */
   background-color: black;
   color: white;
   display: flex;
@@ -13,15 +13,21 @@
 .welcomeContainer {
   display: flex;
   justify-content: space-between;
-  /* background-color: aqua; */
+  background-color: aqua;
   width: 200px;
 }
 
-.logoutButton {
+/* .logoutButton {
   font-size: 10px;
   display: flex;
   border-radius: 50px;
   margin: 0 auto;
   background-color: aliceblue;
-  /* text-align: center; */
+  text-align: center;
+} */
+
+.headerLinks {
+  position: absolute;
+  height: 15vh;
+  background-color: black;
 }
