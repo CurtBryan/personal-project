@@ -20,12 +20,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        {!this.props.user ? (
+        {!this.props.profile.user ? (
           <FrontPage />
         ) : (
           <Switch>
             <Route path="/events_dir" component={EventsDir} />
-            <Route path="/event_page" component={EventPage} />
+            <Route path="/event_page/:id" component={EventPage} />
             <Route path="/add_event" component={AddEvent} />
             <Route path="/contact" component={Contact} />
             <Route path="/current_user" component={CurrentUserProfile} />

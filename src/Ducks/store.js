@@ -1,4 +1,11 @@
-import { createStore } from "redux";
-import reducer from "./profileReducer";
+import { createStore, applyMiddleware, combineReducers } from "redux";
+import promiseMiddleware from "redux-promise-middleware";
+import profileReducer from "./profileReducer";
+import eventsReducer from "./eventsReducer";
 
-export default createStore(reducer);
+const rootReducer = combineReducers({
+  profile: profileReducer,
+  events: eventsReducer
+});
+
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware));

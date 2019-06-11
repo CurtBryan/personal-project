@@ -6,7 +6,22 @@ class Contact extends Component {
     this.state = {};
   }
   render() {
-    return <div>this is the contact page</div>;
+    return (
+      <div>
+        <div>
+          <h2>
+            If you need to contactthe adminsters of this website, please fill
+            out the form below, and we will get back to you as soon as possible!{" "}
+          </h2>
+          <h1>Name:</h1>
+          <input />
+          <h1>Email:</h1>
+          <input />
+          <h1>Message:</h1>
+          <input />
+        </div>
+      </div>
+    );
   }
 }
 

@@ -60,8 +60,8 @@ class FrontPage extends Component {
   };
 
   render() {
-    const { user } = this.props;
     const { first_name, last_name, password, email, profile_pic } = this.state;
+    // console.log(this.props);
     return (
       <div>
         {!this.state.login ? (
@@ -169,8 +169,6 @@ class FrontPage extends Component {
             </div>
           </div>
         )}
-        {/* {console.log(this.props.user)} */}
-        {/* {console.log(this.state)} */}
       </div>
     );
   }

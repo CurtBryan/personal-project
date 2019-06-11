@@ -24,10 +24,10 @@ class Header extends React.Component {
       <div className="headerContainer">
         <header>
           <h1 className="headerName">YHH-PHX</h1>
-          {!this.props.user ? null : (
+          {!this.props.profile.user ? null : (
             <div className="welcomeContainer">
               <p className="welcomeHeader">
-                Welcome {this.props.user.first_name}!
+                Welcome {this.props.profile.user.first_name}!
               </p>
               <button className="logoutButton" onClick={this.logout}>
                 Logout
@@ -46,8 +46,6 @@ class Header extends React.Component {
           </button>
         </header>
         <div>
-          {console.log(this.state.showMenu)}
-          {this.state.showMenu}
           {!this.state.showMenu ? (
             <nav className="headerLinks">
               <NavLink exact to="/">

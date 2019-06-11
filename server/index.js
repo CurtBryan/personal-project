@@ -12,6 +12,10 @@ const {
   register,
   logout
 } = require("./controllers/authController");
+const {
+  getAllEvents,
+  getEventForPage
+} = require("./controllers/eventsController");
 
 app.use(
   session({
@@ -30,6 +34,9 @@ app.get("/api/user", userInfo);
 app.post("/api/register", register);
 app.post("/api/login", login);
 app.get("/api/logout", logout);
+
+app.get("/api/get_events", getAllEvents);
+app.get("/api/get_event_for_page/:id", getEventForPage);
 
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
