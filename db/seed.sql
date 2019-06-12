@@ -9,8 +9,6 @@ charity boolean not null,
 profile_pic text,
 rating integer,
 bio text,
-future_events int[], 
-events_attended int[]
 );
 
 create table event(
@@ -27,6 +25,18 @@ creator_id integer references users(user_id),
 create table comments(
     comment_id serial primary key,
     message text not null,
+    user_id integer references users(user_id),
+    event_id integer references event(event_id)
+);
+
+create table future_events(
+    future_events_id serial primary key,
+    user_id integer references users(user_id),
+    event_id integer references event(event_id)
+);
+
+create table events_attended(
+    future_events_id serial primary key,
     user_id integer references users(user_id),
     event_id integer references event(event_id)
 );

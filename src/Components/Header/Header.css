@@ -1,33 +1,44 @@
 .headerContainer {
+  width: 100vw;
   min-height: 8vh;
   max-height: 30vh;
   /* max-width: 1920px; */
   background-color: black;
   color: white;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.titleMB {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .welcomeContainer {
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
-  width: 200px;
+  width: 350px;
 }
 
-/* .logoutButton {
+.logoutButton {
   font-size: 10px;
   display: flex;
   border-radius: 50px;
   margin: 0 auto;
   background-color: aliceblue;
   text-align: center;
-} */
+}
 
 .headerLinks {
+  width: 100vw;
   position: absolute;
   height: 15vh;
   background-color: black;
+}
+
+.menuButton {
+  height: 20px;
 }

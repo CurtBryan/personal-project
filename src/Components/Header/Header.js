@@ -10,7 +10,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false
+      showMenu: true
     };
   }
 
@@ -23,7 +23,7 @@ class Header extends React.Component {
     return (
       <div>
         <div className="headerContainer">
-          <header>
+          <header className="titleMB">
             <h1 className="headerName">YHH-PHX</h1>
             {!this.props.profile.user ? null : (
               <div className="welcomeContainer">

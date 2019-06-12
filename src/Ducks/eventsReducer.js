@@ -1,9 +1,12 @@
 const initialState = {
   events: [],
-  event: []
+  future_events: [],
+  events_attended: []
 };
 
 const SET_EVENTS = "SET_EVENTS";
+const SET_FUTURE_EVENTS = "SET_FUTURE_EVENTS";
+const SET_EVENTS_ATTENDED = "SET_EVENTS_ATTENDED";
 
 export default function eventsReducer(state = initialState, action) {
   switch (action.type) {
