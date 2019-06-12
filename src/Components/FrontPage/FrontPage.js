@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./FrontPage.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../Ducks/profileReducer";
@@ -66,7 +67,8 @@ class FrontPage extends Component {
       <div>
         {!this.state.login ? (
           <div className="frontPageBody">
-            <div className="loginRegisterCointainer">
+            <div className="registerContainer">
+              <h1>Your Helping Hands</h1>
               <input
                 onChange={e =>
                   this.universalHandler(e.target.name, e.target.value)
@@ -100,22 +102,24 @@ class FrontPage extends Component {
                 value={email}
                 placeholder="Email"
               />
-              <input
-                type="checkbox"
-                value={this.state.charity}
-                onChange={() => {
-                  if (this.state.charity === false) {
-                    this.setState({
-                      charity: true
-                    });
-                  } else {
-                    this.setState({
-                      charity: false
-                    });
-                  }
-                }}
-              />
-              <p>Are you signing up as a Charity? </p>
+              <div className="checkBoxContainer">
+                <p>Check box if you are making a charity account</p>
+                <input
+                  type="checkbox"
+                  value={this.state.charity}
+                  onChange={() => {
+                    if (this.state.charity === false) {
+                      this.setState({
+                        charity: true
+                      });
+                    } else {
+                      this.setState({
+                        charity: false
+                      });
+                    }
+                  }}
+                />
+              </div>
               <input
                 onChange={e =>
                   this.universalHandler(e.target.name, e.target.value)
@@ -124,48 +128,55 @@ class FrontPage extends Component {
                 value={profile_pic}
                 placeholder="Profile Picture (URL)"
               />
-              <button onClick={this.register}>REGISTER</button>
-              <button
-                onClick={() => {
-                  this.setState({
-                    login: true
-                  });
-                }}
-              >
-                Already a User?
-              </button>
+              <div className="registerButtonContainer">
+                <button onClick={this.register}>Register</button>
+                <button
+                  onClick={() => {
+                    this.setState({
+                      login: true
+                    });
+                  }}
+                >
+                  Already a User?
+                </button>
+              </div>
             </div>
           </div>
         ) : (
           <div className="frontPageBody">
-            <div className="loginRegisterCointainer">
-              <input
-                placeholder="email"
-                onChange={e =>
-                  this.universalHandler(e.target.name, e.target.value)
-                }
-                value={this.state.email}
-                name="email"
-              />
-              <input
-                type="password"
-                placeholder="password"
-                onChange={e =>
-                  this.universalHandler(e.target.name, e.target.value)
-                }
-                value={this.state.password}
-                name="password"
-              />
-              <button onClick={this.login}>login</button>
-              <button
-                onClick={() => {
-                  this.setState({
-                    login: false
-                  });
-                }}
-              >
-                Not a User?
-              </button>
+            <div className="loginContainer">
+              <h1>Your Helping Hands</h1>
+              <div className="loginInputsContainer">
+                <input
+                  placeholder="email"
+                  onChange={e =>
+                    this.universalHandler(e.target.name, e.target.value)
+                  }
+                  value={this.state.email}
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  onChange={e =>
+                    this.universalHandler(e.target.name, e.target.value)
+                  }
+                  value={this.state.password}
+                  name="password"
+                />
+              </div>
+              <div className="loginButtonContainer">
+                <button onClick={this.login}>Login</button>
+                <button
+                  onClick={() => {
+                    this.setState({
+                      login: false
+                    });
+                  }}
+                >
+                  Not a User?
+                </button>
+              </div>
             </div>
           </div>
         )}

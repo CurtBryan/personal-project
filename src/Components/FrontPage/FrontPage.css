@@ -1,0 +1,87 @@
+body {
+  background-image: url("http://resourceadvisor.com/blog/wp-content/uploads/2016/10/hands_in_high_school_students.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.frontPageBody {
+  height: 90vh;
+  width: 100vw;
+  background-image: url("http://resourceadvisor.com/blog/wp-content/uploads/2016/10/hands_in_high_school_students.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  height: 50vh;
+  width: 30vw;
+  background-color: #4ef3ebc2;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.loginInputsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 20vw;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.loginButtonContainer {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.loginButtonContainer > button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: black;
+  border-color: rgb(129, 126, 126);
+}
+
+/* register side */
+
+.registerContainer {
+  height: 80vh;
+  width: 30vw;
+  background-color: #4ef3ebc2;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.checkBoxContainer {
+  display: flex;
+}
+
+.registerButtonContainer {
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  justify-content: space-evenly;
+}
+
+.registerButtonContainer > button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: black;
+  border-color: rgb(129, 126, 126);
+}

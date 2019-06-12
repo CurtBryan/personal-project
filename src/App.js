@@ -10,7 +10,7 @@ import EventPage from "./Components/Events/EventPage";
 import AddEvent from "./Components/Events/AddEvent";
 import Contact from "./Components/Contact/Contact";
 import CurrentUserProfile from "./Components/CurrentUserProfile/CurrentUserProfile";
-
+// colors mint green #4EF39A light blue #4EF3EC purple #F34EA7
 class App extends React.Component {
   constructor(props) {
     super(props);

@@ -2,7 +2,7 @@
   width: 100vw;
   min-height: 8vh;
   max-height: 30vh;
-  /* max-width: 1920px; */
+  max-width: 1920px;
   background-color: black;
   color: white;
   display: flex;
@@ -18,18 +18,25 @@
 }
 
 .welcomeContainer {
+  align-content: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 350px;
+  /* margin-top: 5px; */
+}
+
+.welcomeHeader {
+  margin-top: 15px;
 }
 
 .logoutButton {
-  font-size: 10px;
-  display: flex;
-  border-radius: 50px;
-  margin: 0 auto;
-  background-color: aliceblue;
-  text-align: center;
+  color: black;
+  margin-top: 5px;
+  max-height: 6vh;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #28cc9e;
+  border-color: rgb(88, 88, 88);
 }
 
 .headerLinks {
@@ -39,6 +46,16 @@
   background-color: black;
 }
 
+.logo {
+  height: 8vh;
+}
+
 .menuButton {
-  height: 20px;
+  margin-top: 5px;
+  max-height: 6vh;
+  color: black;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #28cc9e;
+  border-color: rgb(88, 88, 88);
 }

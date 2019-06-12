@@ -5,6 +5,7 @@ import { setUser } from "../../Ducks/profileReducer";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import "./Header.css";
+import Logo from "../../logo_transparent.png";
 
 class Header extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class Header extends React.Component {
       <div>
         <div className="headerContainer">
           <header className="titleMB">
-            <h1 className="headerName">YHH-PHX</h1>
+            <div className="logoDiv">
+              <img className="logo" src={Logo} />
+            </div>
             {!this.props.profile.user ? null : (
               <div className="welcomeContainer">
                 <p className="welcomeHeader">
