@@ -33,7 +33,14 @@ class Comments extends Component {
       });
   };
 
-  // editComment = ()
+  editComment = (comment_id, event_id) => {
+    const { message } = this.state;
+    axios
+      .put(`/api/edit_comment/${comment_id}`, { message, event_id })
+      .then(res => {
+        this.props.setComments(res.data);
+      });
+  };
 
   createComment = () => {
     const { message } = this.state;
@@ -59,8 +66,17 @@ class Comments extends Component {
           </button>
           {this.state.edit_message ? (
             <div>
-              <input placeholder="New Message Here" />
-              <button>Submit Edit</button>
+              <input
+                onChange={event => {
+                  this.setState({
+                    message: event.target.value
+                  });
+                }}
+                placeholder="New Message Here"
+              />
+              <button onClick={() => this.editComment(num3, num4)}>
+                Submit Edit
+              </button>
             </div>
           ) : null}
           <button onClick={() => this.deleteComment(num3, num4)}>Delete</button>

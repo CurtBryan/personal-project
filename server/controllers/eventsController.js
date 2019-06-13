@@ -46,5 +46,28 @@ module.exports = {
     db.pull_events_attended([id]).then(events => {
       res.status(200).send(events);
     });
+  },
+  addEvent: (req, res, next) => {
+    const {
+      event_name,
+      date,
+      time,
+      location,
+      info,
+      event_pic,
+      creator_id
+    } = req.body;
+    const db = req.app.get("db");
+    db.add_event([
+      event_name,
+      date,
+      time,
+      location,
+      info,
+      event_pic,
+      creator_id
+    ]).then(events => {
+      res.status(200).send(events);
+    });
   }
 };

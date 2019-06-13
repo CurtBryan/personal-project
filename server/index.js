@@ -25,7 +25,8 @@ const {
   getFutureEvents,
   removeFutureEvent,
   addToEventsAttended,
-  getEventsAttended
+  getEventsAttended,
+  addEvent
 } = require("./controllers/eventsController");
 
 app.use(
@@ -55,6 +56,7 @@ app.post("/api/add_future_event", addToFutureEvents);
 app.delete("/api/remove_future_event/:id", removeFutureEvent);
 app.get("/api/get_events_attended/:id", getEventsAttended);
 app.post("/api/add_event_attended", addToEventsAttended);
+app.post("/api/add_event", addEvent);
 
 //comments logic
 app.get("/api/get_comments/:id", getComments);
