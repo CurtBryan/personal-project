@@ -15,16 +15,17 @@ module.exports = {
   },
   editComment: (req, res, next) => {
     const { id } = req.params;
-    const { message } = req.body;
+    const { message, event_id } = req.body;
     const db = req.app.get("db");
-    db.edit_comment([message, id]).then(comments => {
+    db.edit_comment([message, id, event_id]).then(comments => {
       res.status(200).send(comments);
     });
   },
   deleteComment: (req, res, next) => {
     const { id } = req.params;
+    const { event_id } = req.body;
     const db = req.app.get("db");
-    db.delete_comments([id]).then(comments => {
+    db.delete_comments([id, event_id]).then(comments => {
       res.status(200).send(comments);
     });
   }

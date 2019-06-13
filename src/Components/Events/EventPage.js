@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Comments from "../Comments/Comments";
 import axios from "axios";
 
 class EventPage extends Component {
@@ -6,13 +7,12 @@ class EventPage extends Component {
     super(props);
     this.state = {
       event: [],
-      id: this.props.match.params.id
+      event_id: this.props.match.params.id
     };
   }
 
   componentDidMount() {
-    axios.get(`/api/get_event_for_page/${this.state.id}`).then(res => {
-      console.log(res.data);
+    axios.get(`/api/get_event_for_page/${this.state.event_id}`).then(res => {
       this.setState({
         event: res.data[0]
       });
@@ -41,6 +41,10 @@ class EventPage extends Component {
           <h3>Date: {date}</h3>
           <h3>Time: {time}</h3>
           <p>Details: {info}</p>
+        </div>
+        <br />
+        <div>
+          <Comments event_id={this.state.event_id} />
         </div>
       </div>
     );
