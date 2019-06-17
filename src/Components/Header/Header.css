@@ -44,13 +44,18 @@
   position: absolute;
   height: 15vh;
   background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .logo {
   height: 8vh;
+  margin-left: 15px;
 }
 
 .menuButton {
+  margin-right: 15px;
   margin-top: 5px;
   max-height: 6vh;
   color: black;

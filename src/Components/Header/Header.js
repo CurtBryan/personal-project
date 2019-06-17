@@ -53,12 +53,55 @@ class Header extends React.Component {
         <div>
           {!this.state.showMenu ? (
             <div className="headerLinks">
-              <NavLink exact to="/">
+              <NavLink
+                exact
+                to="/"
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+              >
                 Home
               </NavLink>
-              <NavLink to="/events_dir">Events</NavLink>
-              <NavLink to="/current_user">Profile</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+                to="/events_dir"
+              >
+                Events
+              </NavLink>
+              <NavLink
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+                to="/current_user"
+              >
+                Profile
+              </NavLink>
+              <NavLink
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+                to="/contact"
+              >
+                Contact
+              </NavLink>
             </div>
           ) : null}
         </div>

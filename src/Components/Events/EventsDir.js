@@ -9,6 +9,7 @@ class EventsDir extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
@@ -21,21 +22,32 @@ class EventsDir extends Component {
     const allEvents = this.props.events.events.map(element => {
       return (
         <div className="eventDirContainer">
-          <div>
+          <div className="eventDirPicBox">
             <img className="eventDirPic" src={element.event_pic} />
           </div>
-          <NavLink to={`/event_page/${element.event_id}`}>
-            {element.event_name}
-          </NavLink>
-          <h2>{element.date}</h2>
-          <h2>{element.info}</h2>
+          <div className="eventDirTitle">
+            <NavLink to={`/event_page/${element.event_id}`}>
+              {element.event_name}
+            </NavLink>
+          </div>
+          <div className="eventDirDate">
+            <h2>Date: {element.date}</h2>
+          </div>
+          <div className="eventDirInfo">
+            <h2>{element.info}</h2>
+          </div>
         </div>
       );
     });
     return (
-      <div>
-        <div>
-          <div>{allEvents}</div>
+      <div className="eventsDirBody">
+        <div className="divEventDirContainer">
+          <div className="addEventBox">
+            <div className="addEventButton">
+              <NavLink to="/add_event">Add Event Here!</NavLink>
+            </div>
+          </div>
+          <div className="eventContainer">{allEvents}</div>
         </div>
       </div>
     );

@@ -9,6 +9,7 @@ class EventPage extends Component {
       event: [],
       event_id: this.props.match.params.id
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {

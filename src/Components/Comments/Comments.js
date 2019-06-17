@@ -12,14 +12,15 @@ class Comments extends Component {
       edit_message: false,
       add_message: false
     };
+    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { event_id } = this.props;
     axios.get(`/api/get_comments/${event_id}`).then(res => {
       this.props.setComments(res.data);
     });
-  }
+  };
 
   deleteComment = (comment_id, event_id) => {
     console.log(comment_id, event_id);
