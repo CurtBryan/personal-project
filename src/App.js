@@ -11,6 +11,12 @@ import AddEvent from "./Components/Events/AddEvent";
 import Contact from "./Components/Contact/Contact";
 import CurrentUserProfile from "./Components/CurrentUserProfile/CurrentUserProfile";
 // colors mint green #4EF39A light blue #4EF3EC purple #F34EA7
+// font-family: 'Pacifico', cursive;
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Quattrocento', serif;
+// font-family: 'Quattrocento Sans', sans-serif;
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Oswald', sans-serif;
 class App extends React.Component {
   constructor(props) {
     super(props);

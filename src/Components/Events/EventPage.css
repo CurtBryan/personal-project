@@ -1,0 +1,15 @@
+.eventPageBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventPageContainer {
+  width: 80vw;
+  background-color: grey;
+}
+
+.eventPageImg > img {
+  height: 50vh;
+}

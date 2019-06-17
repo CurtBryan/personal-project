@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Comments from "../Comments/Comments";
+import "./EventPage.css";
 import axios from "axios";
 
 class EventPage extends Component {
@@ -31,21 +32,23 @@ class EventPage extends Component {
       date
     } = this.state.event;
     return (
-      <div>
-        <div>
-          <img src={event_pic} />
-        </div>
-        <div>
-          <h1>{event_name}</h1>
-          <h2>Hosted By: {first_name}</h2>
-          <h3>Location: {location}</h3>
-          <h3>Date: {date}</h3>
-          <h3>Time: {time}</h3>
-          <p>Details: {info}</p>
-        </div>
-        <br />
-        <div>
-          <Comments event_id={this.state.event_id} />
+      <div className="eventPageBody">
+        <div className="eventPageContainer">
+          <div className="eventPageImg">
+            <img src={event_pic} />
+          </div>
+          <div className="eventPageInfoContainer">
+            <h1>{event_name}</h1>
+            <h2>Hosted By: {first_name}</h2>
+            <h3>Location: {location}</h3>
+            <h3>Date: {date}</h3>
+            <h3>Time: {time}</h3>
+            <p>Details: {info}</p>
+          </div>
+          <br />
+          <div>
+            <Comments event_id={this.state.event_id} />
+          </div>
         </div>
       </div>
     );

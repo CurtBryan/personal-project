@@ -3,7 +3,16 @@ const express = require("express");
 const app = express();
 const massive = require("massive");
 const session = require("express-session");
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
+const nodemailer = require("nodemailer");
+
+app.use(express.json());
+const {
+  SERVER_PORT,
+  SESSION_SECRET,
+  CONNECTION_STRING,
+  NODEMAILEREMAIL,
+  NODEMAILERPASS
+} = process.env;
 const port = SERVER_PORT || 4000;
 
 const {
@@ -40,7 +49,34 @@ app.use(
   })
 );
 
-app.use(express.json());
+massive(CONNECTION_STRING).then(db => {
+  app.set("db", db);
+  console.log("db is connected");
+});
+//nodemailer
+app.post("/api/form", (req, res) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: NODEMAILEREMAIL,
+      pass: NODEMAILERPASS
+    }
+  });
+  const mailOptions = {
+    from: `${req.body.email}`,
+    to: NODEMAILEREMAIL,
+    subject: `${req.body.name}`,
+    text: `${req.body.message}`,
+    replyTo: `${req.body.email}`
+  };
+  transporter.sendMail(mailOptions, function(err, res) {
+    if (err) {
+      console.error("there was an error: ", err);
+    } else {
+      console.log("here is the res: ", res);
+    }
+  });
+});
 
 //auth logic
 app.get("/api/user", userInfo);
@@ -63,10 +99,5 @@ app.get("/api/get_comments/:id", getComments);
 app.post("/api/add_comment", addComment);
 app.put("/api/edit_comment/:id", editComment);
 app.delete("/api/delete_comment/:id", deleteComment);
-
-massive(CONNECTION_STRING).then(db => {
-  app.set("db", db);
-  console.log("db is connected");
-});
 
 app.listen(port, () => console.log(`server running on port ${port} 🏹`));

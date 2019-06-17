@@ -23,9 +23,12 @@ module.exports = {
   },
   deleteComment: (req, res, next) => {
     const { id } = req.params;
-    const { event_id } = req.body;
+    const { event_id } = req.query;
     const db = req.app.get("db");
+    console.log(id);
+    console.log(req.query);
     db.delete_comments([id, event_id]).then(comments => {
+      // console.log(id, event_id);
       res.status(200).send(comments);
     });
   }

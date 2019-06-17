@@ -22,15 +22,15 @@ class Comments extends Component {
     });
   };
 
-  deleteComment = (comment_id, event_id) => {
-    console.log(comment_id, event_id);
+  deleteComment = comment_id => {
+    const { event_id } = this.props;
+    const num = Number(event_id);
+    console.log(comment_id, num);
     axios
-      .delete(`/api/delete_comment/${comment_id}`, { event_id })
+      .delete(`/api/delete_comment/${comment_id}?event_id=${num}`)
       .then(res => {
+        console.log(res.data, "delete");
         this.props.setComments(res.data);
-      })
-      .catch(err => {
-        console.log(err);
       });
   };
 
@@ -39,6 +39,7 @@ class Comments extends Component {
     axios
       .put(`/api/edit_comment/${comment_id}`, { message, event_id })
       .then(res => {
+        // console.log("got response", res.data);
         this.props.setComments(res.data);
       });
   };
@@ -49,6 +50,7 @@ class Comments extends Component {
     const { event_id } = this.props;
     axios.post(`/api/add_comment`, { message, user_id, event_id }).then(res => {
       this.props.setComments(res.data);
+      console.log("hit", res.data);
     });
   };
 
@@ -80,7 +82,7 @@ class Comments extends Component {
               </button>
             </div>
           ) : null}
-          <button onClick={() => this.deleteComment(num3, num4)}>Delete</button>
+          <button onClick={() => this.deleteComment(num3)}>Delete</button>
         </div>
       );
     } else {
@@ -92,6 +94,7 @@ class Comments extends Component {
     console.log(this.props.comments.comments);
     console.log(this.props);
     const mappedComments = this.props.comments.comments.map(element => {
+      console.log(element, "mapped element");
       return (
         <div>
           <div>
