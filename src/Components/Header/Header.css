@@ -3,7 +3,7 @@
   min-height: 10vh;
   max-height: 30vh;
   max-width: 1920px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.822);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -34,8 +34,8 @@
 .logoutButton {
   font-family: "Quattrocento Sans", sans-serif;
   color: black;
-  margin-top: 5px;
-  max-height: 6vh;
+  margin-top: 12px;
+  max-height: 4vh;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background-color: #28cc9e;
@@ -43,10 +43,11 @@
 }
 
 .headerLinks {
+  font-family: "Quattrocento Sans", sans-serif;
   width: 100vw;
   position: absolute;
   height: 15vh;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.822);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -60,8 +61,8 @@
 .menuButton {
   font-family: "Quattrocento Sans", sans-serif;
   margin-right: 18px;
-  margin-top: 5px;
-  max-height: 6vh;
+  margin-top: 12px;
+  max-height: 4vh;
   color: black;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);

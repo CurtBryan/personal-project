@@ -33,20 +33,22 @@ class EventPage extends Component {
     } = this.state.event;
     return (
       <div className="eventPageBody">
-        <div className="eventPageContainer">
-          <div className="eventPageImg">
-            <img src={event_pic} />
-          </div>
-          <div className="eventPageInfoContainer">
-            <h1>{event_name}</h1>
-            <h2>Hosted By: {first_name}</h2>
-            <h3>Location: {location}</h3>
-            <h3>Date: {date}</h3>
-            <h3>Time: {time}</h3>
-            <p>Details: {info}</p>
+        <div className="eventPageMainContainer">
+          <div className="eventPageContainer">
+            <div className="eventPageImg">
+              <img src={event_pic} />
+            </div>
+            <div className="eventPageInfoContainer">
+              <h1>{event_name}</h1>
+              <h2>Hosted By: {first_name}</h2>
+              <h3>Location: {location}</h3>
+              <h3>Date: {date}</h3>
+              <h3>Time: {time}</h3>
+              <p>Details: {info}</p>
+            </div>
           </div>
           <br />
-          <div>
+          <div className="eventPageCommentContainer">
             <Comments event_id={this.state.event_id} />
           </div>
         </div>

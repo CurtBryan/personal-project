@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import { connect } from "react-redux";
+import "./AddEvent.css";
 
 class AddEvent extends Component {
   constructor(props) {
@@ -67,57 +68,64 @@ class AddEvent extends Component {
             </h1>
           </div>
         ) : null}
-        <div>
-          <input
-            onChange={event => {
-              this.setState({
-                event_name: event.target.value
-              });
-            }}
-            placeholder="Event Name"
-          />
-          <input
-            onChange={event => {
-              this.setState({
-                date: event.target.value
-              });
-            }}
-            placeholder="Date (MM-DD-YYYY)"
-          />
-          <input
-            onChange={event => {
-              this.setState({
-                time: event.target.value
-              });
-            }}
-            placeholder="Time (0:00AM) "
-          />
-          <input
-            onChange={event => {
-              this.setState({
-                location: event.target.value
-              });
-            }}
-            placeholder="Location (Address)"
-          />
-          <input
-            onChange={event => {
-              this.setState({
-                info: event.target.value
-              });
-            }}
-            placeholder="Information"
-          />
-          <input
-            onChange={event => {
-              this.setState({
-                event_pic: event.target.value
-              });
-            }}
-            placeholder="Event Picture (URL)"
-          />
-          <div>
-            <button onClick={() => this.addEvent()}>Add Event</button>
+        <div className="addEventBody">
+          <div className="demInputs">
+            <input
+              onChange={event => {
+                this.setState({
+                  event_name: event.target.value
+                });
+              }}
+              placeholder="Event Name"
+            />
+            <input
+              onChange={event => {
+                this.setState({
+                  date: event.target.value
+                });
+              }}
+              placeholder="Date (MM-DD-YYYY)"
+            />
+            <input
+              onChange={event => {
+                this.setState({
+                  time: event.target.value
+                });
+              }}
+              placeholder="Time (0:00AM) "
+            />
+            <input
+              onChange={event => {
+                this.setState({
+                  location: event.target.value
+                });
+              }}
+              placeholder="Location (Address)"
+            />
+            <textarea
+              onChange={event => {
+                this.setState({
+                  info: event.target.value
+                });
+              }}
+              placeholder="Information"
+            />
+            <input
+              onChange={event => {
+                this.setState({
+                  event_pic: event.target.value
+                });
+              }}
+              placeholder="Event Picture (URL)"
+            />
+            <div>
+              <button
+                className="addEventPageButton"
+                onClick={() => this.addEvent()}
+              >
+                Add Event
+              </button>
+            </div>
           </div>
         </div>
       </div>

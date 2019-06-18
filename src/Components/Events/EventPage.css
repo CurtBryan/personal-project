@@ -5,11 +5,49 @@
   align-items: center;
 }
 
-.eventPageContainer {
+.eventPageMainContainer {
   width: 80vw;
   background-color: grey;
 }
 
 .eventPageImg > img {
-  height: 50vh;
+  height: 40vh;
+}
+
+.eventPageContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.eventPageInfoContainer {
+  font-family: "Quattrocento Sans", sans-serif;
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.eventPageInfoContainer > h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+}
+
+.eventPageInfoContainer > h2 {
+  font-size: 24px;
+}
+
+.eventPageInfoContainer > h3 {
+  font-size: 18px;
+}
+
+.eventPageInfoContainer > p {
+  font-size: 14px;
+}
+
+.eventPageCommentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

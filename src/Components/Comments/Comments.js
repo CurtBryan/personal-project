@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setComments } from "../../Ducks/commentsReducer";
+import "./Comments.css";
 
 class Comments extends Component {
   constructor(props) {
@@ -57,8 +58,9 @@ class Comments extends Component {
   editAndDeleteButtons = (num1, num2, num3, num4) => {
     if (num1 === num2) {
       return (
-        <div>
+        <div className="editDeleteContainer">
           <button
+            className="editButton"
             onClick={() => {
               this.setState({
                 edit_message: !this.state.edit_message
@@ -69,7 +71,8 @@ class Comments extends Component {
           </button>
           {this.state.edit_message ? (
             <div>
-              <input
+              <textarea
+                className="editCommentText"
                 onChange={event => {
                   this.setState({
                     message: event.target.value
@@ -77,12 +80,20 @@ class Comments extends Component {
                 }}
                 placeholder="New Message Here"
               />
-              <button onClick={() => this.editComment(num3, num4)}>
+              <button
+                className="submitEdit"
+                onClick={() => this.editComment(num3, num4)}
+              >
                 Submit Edit
               </button>
             </div>
           ) : null}
-          <button onClick={() => this.deleteComment(num3)}>Delete</button>
+          <button
+            className="deleteButton"
+            onClick={() => this.deleteComment(num3)}
+          >
+            Delete
+          </button>
         </div>
       );
     } else {
@@ -91,17 +102,17 @@ class Comments extends Component {
   };
 
   render() {
-    console.log(this.props.comments.comments);
+    console.log(this.props.comments.comfments);
     console.log(this.props);
     const mappedComments = this.props.comments.comments.map(element => {
       console.log(element, "mapped element");
       return (
-        <div>
+        <div className="commentMappedContainer">
           <div>
-            <h1>{element.first_name}</h1>
+            <h1 className="commentName">{element.first_name}</h1>
           </div>
           <div>
-            <p>{element.message}</p>
+            <p className="commentContent">{element.message}</p>
           </div>
           {this.editAndDeleteButtons(
             this.state.current_user_id,
@@ -114,7 +125,7 @@ class Comments extends Component {
     });
     return (
       <div>
-        <div>
+        <div className="CreateCommentContainer">
           <button
             onClick={() => {
               this.setState({
@@ -127,7 +138,8 @@ class Comments extends Component {
         </div>
         {!this.state.add_message ? null : (
           <div>
-            <input
+            <textarea
+              className="newCommentText"
               onChange={event =>
                 this.setState({
                   message: event.target.value
@@ -135,11 +147,16 @@ class Comments extends Component {
               }
               placeholder="type message here"
             />
-            <button onClick={this.createComment}>Submit</button>
+            <button
+              className="CreateCommentSubmit"
+              onClick={this.createComment}
+            >
+              Submit
+            </button>
           </div>
         )}
-        <div>
-          <span>{mappedComments}</span>
+        <div className="commentContainer">
+          <span className="commentContainer">{mappedComments}</span>
         </div>
       </div>
     );

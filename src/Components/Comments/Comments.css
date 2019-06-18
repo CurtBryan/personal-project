@@ -1,0 +1,58 @@
+.commentMappedContainer {
+  background-color: beige;
+  width: 40vw;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Quattrocento Sans", sans-serif;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.commentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 40vw;
+  height: 50vh;
+}
+
+.commentName,
+.commentContent,
+.deleteButton,
+.editButton {
+  margin-left: 20px;
+}
+
+.deleteButton,
+.editButton,
+.CreateCommentSubmit,
+.submitEdit,
+.CreateCommentContainer > button {
+  width: 100px;
+  border-color: #f34ea7;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #f34ea7;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.newCommentText,
+.editCommentText {
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 45px;
+}
+
+.editCommentText {
+  width: 50%;
+}
