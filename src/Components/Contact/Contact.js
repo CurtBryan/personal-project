@@ -26,8 +26,8 @@ class Contact extends Component {
       <div className="mainContainerContact">
         <div className="contactContainer">
           <h2 className="messageInfo">
-            If you need to contact the adminsters of this website, please fill
-            out the form below, and we will get back to you as soon as possible!{" "}
+            If you need to contact the admins of this website, please fill out
+            the form below, and we will get back to you as soon as possible!{" "}
           </h2>
           <input
             onChange={event => {

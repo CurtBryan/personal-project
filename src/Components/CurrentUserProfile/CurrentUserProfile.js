@@ -42,7 +42,7 @@ class CurrentUserProfile extends Component {
           <div>
             <img className="profileEventPic" src={element.event_pic} />
           </div>
-          <div>
+          <div className="profileEventInfo">
             <h1>{element.event_name}</h1>
             <h2>{element.date}</h2>
           </div>
@@ -63,7 +63,7 @@ class CurrentUserProfile extends Component {
             <div>
               <img className="profileEventPic" src={element.event_pic} />
             </div>
-            <div className>
+            <div className="profileEventInfo">
               <h1>{element.event_name}</h1>
               <h2>{element.date}</h2>
             </div>
@@ -72,24 +72,28 @@ class CurrentUserProfile extends Component {
       }
     );
     return (
-      <div>
-        <div>
-          <img src={profile_pic} />
-        </div>
-        <div>
-          <h1>
-            {first_name} {last_name}
-          </h1>
-        </div>
-        <br />
-        <div className="futureEventsMainContainer">
-          <h1>Future Events</h1>
-          <span>{mappedFutureEvents}</span>
-        </div>
-        <br />
-        <div className="eventsCompletedMainContainer">
-          <h1>Events Attended</h1>
-          <span>{mappedEventsAttended}</span>
+      <div className="profileMainBody">
+        <div className="profileContainer">
+          <div className="userMainInfo">
+            <div className="profilePicContainer">
+              <img className="profilePic" src={profile_pic} />
+            </div>
+            <div className="userInfoForPage">
+              <h1 className="username">
+                {first_name} {last_name}
+              </h1>
+            </div>
+          </div>
+          <br />
+          <div className="futureEventsMainContainer">
+            <h1>Future Events</h1>
+            <span>{mappedFutureEvents}</span>
+          </div>
+          <br />
+          <div className="eventsCompletedMainContainer">
+            <h1>Events Attended</h1>
+            <span>{mappedEventsAttended}</span>
+          </div>
         </div>
       </div>
     );

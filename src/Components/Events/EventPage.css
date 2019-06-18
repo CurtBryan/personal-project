@@ -7,10 +7,11 @@
 
 .eventPageMainContainer {
   width: 80vw;
-  background-color: grey;
+  background-color: rgba(255, 255, 255, 0.671);
 }
 
 .eventPageImg > img {
+  margin-top: 10px;
   height: 40vh;
 }
 
@@ -44,6 +45,7 @@
 
 .eventPageInfoContainer > p {
   font-size: 14px;
+  text-align: center;
 }
 
 .eventPageCommentContainer {

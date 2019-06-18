@@ -3,10 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("../../logo_transparent.png");
+  background-color: rgb(167, 166, 166);
+  background-size: contain;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
 }
 
 .demInputs {
-  background-color: #4ef39a;
+  background-color: #35f18dcb;
   height: 70vh;
   width: 70vw;
   display: flex;

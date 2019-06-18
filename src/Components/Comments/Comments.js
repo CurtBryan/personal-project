@@ -70,7 +70,7 @@ class Comments extends Component {
             Edit
           </button>
           {this.state.edit_message ? (
-            <div>
+            <div className="editCommentAndButton">
               <textarea
                 className="editCommentText"
                 onChange={event => {

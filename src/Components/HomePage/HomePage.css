@@ -1,0 +1,60 @@
+.homePageMainContainer {
+  height: 90vh;
+  background-color: rgb(167, 166, 166);
+  display: flex;
+  justify-content: center;
+}
+
+.homePageCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80vw;
+  background-color: rgba(255, 255, 255, 0.705);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.homePagePhotoCont {
+  display: flex;
+  justify-content: space-around;
+}
+
+.homePagePic1,
+.homePagePic2,
+.homePagePic3 {
+  height: 200px;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.titleContainer {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.titleContainer > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.titleContainer > h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.missionStatement {
+  display: flex;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+  font-family: "Quattrocento Sans", sans-serif;
+}

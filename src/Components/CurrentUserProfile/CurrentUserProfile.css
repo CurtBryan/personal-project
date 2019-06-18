@@ -1,3 +1,63 @@
 .profileEventPic {
   height: 15vh;
 }
+
+.profilePic {
+  width: 300px;
+}
+
+.profileMainBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Quattrocento Sans", sans-serif;
+  width: 80vw;
+  background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.username {
+  font-size: 36px;
+}
+
+.userMainInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userInfoForPage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50vw;
+}
+
+.eventsCompletedMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.eventsCompletedMainContainer > span {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.futureEventsMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.futureEventsMainContainer > span {
+  display: flex;
+  justify-content: space-evenly;
+}
