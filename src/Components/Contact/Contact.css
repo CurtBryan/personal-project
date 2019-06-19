@@ -42,3 +42,10 @@ textarea {
   font-family: "Quattrocento Sans", sans-serif;
   height: 45px;
 }
+
+@media (max-width: 768px) {
+  .contactContainer {
+    width: 80vw;
+    height: 70vh;
+  }
+}

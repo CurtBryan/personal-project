@@ -1,10 +1,10 @@
 .commentMappedContainer {
   background-color: rgb(212, 212, 212);
   width: 40vw;
-  height: 18vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-family: "Quattrocento Sans", sans-serif;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
@@ -14,8 +14,10 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  width: 40vw;
-  height: 50vh;
+  margin-top: 5px;
+  width: 80vw;
+  height: 800vh;
+  overflow-x: auto;
 }
 
 .commentName,
@@ -60,6 +62,10 @@
   height: 45px;
 }
 
+.newCommentText {
+  width: 60vw;
+}
+
 .editCommentText {
   width: 60%;
 }
@@ -79,4 +85,36 @@
   width: 450px;
   justify-content: space-between;
   align-items: center;
+}
+
+.CreateCommentContainer {
+  width: 80vw;
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.newCommentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commentMainContainer {
+  /* background-color: #4ef39a; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-x: scroll;
+  height: 100vh;
+}
+
+@media (max-width: 426px) {
+  .commentMappedContainer {
+    height: 15vh;
+    width: 70vw;
+  }
 }

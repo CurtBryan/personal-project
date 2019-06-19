@@ -3,7 +3,7 @@
 }
 
 .profilePic {
-  width: 300px;
+  width: 30vw;
 }
 
 .profileMainBody {
@@ -53,8 +53,8 @@
 .futureContainer {
   margin-top: 10px;
   background-color: rgb(209, 207, 207);
-  height: 200px;
-  width: 150px;
+  height: 35vh;
+  width: 12vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,8 +66,8 @@
 .pastContainer {
   margin-top: 10px;
   background-color: rgb(209, 207, 207);
-  height: 200px;
-  width: 150px;
+  height: 30vh;
+  width: 12vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,4 +104,32 @@
   display: flex;
   justify-content: space-around;
   width: 100px;
+}
+
+@media (max-width: 426px) {
+  .profilePic {
+    width: 40vw;
+  }
+  .profileContainer {
+    width: 100vw;
+  }
+  .pastContainer,
+  .futureContainer {
+    width: 35vw;
+  }
+  .futureContainer {
+    height: 40vh;
+  }
+  .userMainInfo {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .futureEventsMainContainer > span,
+  .eventsCompletedMainContainer > span {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -131,27 +131,28 @@ class Comments extends Component {
           >
             Create Message
           </button>
+
+          {!this.state.add_message ? null : (
+            <div className="newCommentContainer">
+              <textarea
+                className="newCommentText"
+                onChange={event =>
+                  this.setState({
+                    message: event.target.value
+                  })
+                }
+                placeholder="Type Comment Here"
+              />
+              <button
+                className="CreateCommentSubmit"
+                onClick={this.createComment}
+              >
+                Submit
+              </button>
+            </div>
+          )}
         </div>
-        {!this.state.add_message ? null : (
-          <div>
-            <textarea
-              className="newCommentText"
-              onChange={event =>
-                this.setState({
-                  message: event.target.value
-                })
-              }
-              placeholder="type message here"
-            />
-            <button
-              className="CreateCommentSubmit"
-              onClick={this.createComment}
-            >
-              Submit
-            </button>
-          </div>
-        )}
-        <div className="commentContainer">
+        <div className="commentMainContainer">
           <span className="commentContainer">{mappedComments}</span>
         </div>
       </div>

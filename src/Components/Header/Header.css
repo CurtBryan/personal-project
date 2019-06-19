@@ -11,6 +11,7 @@
 }
 
 .titleMB {
+  /* background-color: #4ef39a; */
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -22,7 +23,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 350px;
-  /* margin-top: 5px; */
+  margin-top: 5px;
 }
 
 .welcomeHeader {
@@ -53,6 +54,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.responsiveHeaderLinks {
+  display: none;
 }
 
 .logo {
@@ -63,6 +69,27 @@
 .menuButton {
   margin-right: 20px;
 }
+
+@media (min-width: 1440px) {
+  .menuButton {
+    display: none;
+  }
+  .headerLinks {
+    display: none;
+  }
+  .responsiveHeaderLinks {
+    margin-top: 10px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+  }
+  .titleMB {
+    justify-content: space-evenly;
+  }
+}
+
 @media (max-width: 426px) {
   .welcomeHeader {
     display: none;

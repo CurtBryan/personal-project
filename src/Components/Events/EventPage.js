@@ -60,11 +60,8 @@ class EventPage extends Component {
               <button onClick={() => this.addEvent()}>
                 Add To My Future Events
               </button>
+              <Comments event_id={this.state.event_id} />
             </div>
-          </div>
-          <br />
-          <div className="eventPageCommentContainer">
-            <Comments event_id={this.state.event_id} />
           </div>
         </div>
       </div>
