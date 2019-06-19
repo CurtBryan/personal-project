@@ -6,7 +6,7 @@ module.exports = {
     const db = req.app.get("db");
     db.check_if_user_exist(email).then(userFound => {
       if (!userFound[0]) {
-        res.status(200).send("Incorrect Username/Password");
+        res.status(401).send("Incorrect Username/Password");
       } else {
         bcrypt
           .compare(password, userFound[0].password)
@@ -38,7 +38,7 @@ module.exports = {
               };
               res.status(200).send(req.session.user);
             } else {
-              res.status(200).send("initializing self-destruct");
+              res.status(401).send("initializing self-destruct");
             }
           });
       }
@@ -56,7 +56,7 @@ module.exports = {
     const db = req.app.get("db");
     db.check_if_user_exist(email).then(foundUser => {
       if (foundUser.length) {
-        res.status(200).send("User Already Exist. Please Login.");
+        res.status(401).send("User Already Exist. Please Login.");
       } else {
         const saltRounds = 12;
         bcrypt.genSalt(saltRounds).then(salt => {

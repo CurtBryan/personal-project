@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setFutureEvents, setEventsAttended } from "../../Ducks/eventsReducer";
 import "./CurrentUserProfile.css";
+import { MdCheckBox, MdDelete } from "react-icons/md";
 import Axios from "axios";
 
 class CurrentUserProfile extends Component {
@@ -22,6 +23,16 @@ class CurrentUserProfile extends Component {
       this.props.setEventsAttended(res2.data);
     });
   }
+
+  deleteEvent = future_events_id => {
+    const { user_id } = this.props.profile.user;
+    Axios.delete(
+      `/api/remove_future_event/${future_events_id}?user_id=${user_id}`
+    ).then(res => {
+      console.log(res.data);
+      this.props.setFutureEvents(res.data);
+    });
+  };
 
   completedEvent = (event_id, future_events_id) => {
     const { user_id } = this.props.profile.user;
@@ -46,13 +57,18 @@ class CurrentUserProfile extends Component {
             <h1>{element.event_name}</h1>
             <h2>{element.date}</h2>
           </div>
-          <button
-            onClick={() =>
-              this.completedEvent(element.event_id, element.future_events_id)
-            }
-          >
-            Event Completed
-          </button>
+          <div className="profilePageButtons">
+            <button
+              onClick={() =>
+                this.completedEvent(element.event_id, element.future_events_id)
+              }
+            >
+              <MdCheckBox />
+            </button>
+            <button onClick={() => this.deleteEvent(element.future_events_id)}>
+              <MdDelete />
+            </button>
+          </div>
         </div>
       );
     });
@@ -80,7 +96,9 @@ class CurrentUserProfile extends Component {
             </div>
             <div className="userInfoForPage">
               <h1 className="username">
-                {first_name} {last_name}
+                {!this.props.profile.user.charity
+                  ? first_name + " " + last_name
+                  : first_name}
               </h1>
             </div>
           </div>

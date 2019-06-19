@@ -86,7 +86,7 @@
   box-sizing: border-box;
   outline: none;
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 7px;
   border: none;
   border-bottom: 1px solid black;
@@ -123,4 +123,20 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background-color: black;
   border-color: rgb(129, 126, 126);
+}
+
+@media (max-width: 426px) {
+  .loginContainer {
+    width: 80vw;
+  }
+  .loginInputsContainer > input {
+    width: 60vw;
+  }
+  .registerContainer {
+    width: 80vw;
+    height: 85vh;
+  }
+  .registerContainer > input {
+    width: 60vw;
+  }
 }

@@ -27,10 +27,10 @@ module.exports = {
     });
   },
   removeFutureEvent: (req, res, next) => {
-    const { id } = req.params;
-    const { user_id } = req.body;
+    const { future_events_id } = req.params;
+    const { user_id } = req.query;
     const db = req.app.get("db");
-    db.remove_future_event([id, user_id]).then(events => {
+    db.remove_future_event([future_events_id, user_id]).then(events => {
       res.status(200).send(events);
     });
   },

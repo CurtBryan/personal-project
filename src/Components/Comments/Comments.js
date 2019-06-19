@@ -26,11 +26,9 @@ class Comments extends Component {
   deleteComment = comment_id => {
     const { event_id } = this.props;
     const num = Number(event_id);
-    console.log(comment_id, num);
     axios
       .delete(`/api/delete_comment/${comment_id}?event_id=${num}`)
       .then(res => {
-        console.log(res.data, "delete");
         this.props.setComments(res.data);
       });
   };
@@ -102,8 +100,6 @@ class Comments extends Component {
   };
 
   render() {
-    console.log(this.props.comments.comfments);
-    console.log(this.props);
     const mappedComments = this.props.comments.comments.map(element => {
       console.log(element, "mapped element");
       return (

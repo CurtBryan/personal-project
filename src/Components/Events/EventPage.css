@@ -8,6 +8,7 @@
 .eventPageMainContainer {
   width: 80vw;
   background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .eventPageImg > img {
@@ -28,6 +29,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
 }
 
 .eventPageInfoContainer > h1 {
@@ -46,6 +49,16 @@
 .eventPageInfoContainer > p {
   font-size: 14px;
   text-align: center;
+}
+
+.eventPageInfoContainer > button {
+  font-family: "Quattrocento Sans", sans-serif;
+  width: 100px;
+  border-color: #4ef39a;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #4ef39a;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .eventPageCommentContainer {

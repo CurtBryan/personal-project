@@ -32,11 +32,10 @@ class HomePage extends Component {
           </div>
           <div className="missionStatement">
             <p>
-              We believe that each and every charitable moment is part of the
-              massive wave of peace slowly, but steadily building up to land
-              upon our shores. We are so thankful for all the charities and
-              users donating their time and effort to the great causes of today.
-              Each and every community can do its part, let's see you do yours
+              We believe that each and every charitable moment is very
+              important. We are so thankful for all the charities and users
+              donating their time and effort to the great causes of today. Each
+              and every community can do its part, let's see you do yours
               Phoenix!
             </p>
           </div>

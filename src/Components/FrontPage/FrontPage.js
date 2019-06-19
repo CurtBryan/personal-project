@@ -19,9 +19,14 @@ class FrontPage extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/user").then(res => {
-      this.props.setUser(res.data);
-    });
+    axios
+      .get("/api/user")
+      .then(res => {
+        this.props.setUser(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   universalHandler = (prop, value) => {
@@ -55,14 +60,18 @@ class FrontPage extends Component {
 
   login = () => {
     const { email, password } = this.state;
-    axios.post("/api/login", { email, password }).then(res => {
-      this.props.setUser(res.data);
-    });
+    axios
+      .post("/api/login", { email, password })
+      .then(res => {
+        this.props.setUser(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
     const { first_name, last_name, password, email, profile_pic } = this.state;
-    // console.log(this.props);
     return (
       <div>
         {!this.state.login ? (
@@ -77,14 +86,17 @@ class FrontPage extends Component {
                 value={first_name}
                 placeholder="First Name or Charity Name"
               />
-              <input
-                onChange={e =>
-                  this.universalHandler(e.target.name, e.target.value)
-                }
-                name="last_name"
-                value={last_name}
-                placeholder="Last Name(if charity, leave Blank)"
-              />
+              {!this.state.charity ? (
+                <input
+                  onChange={e =>
+                    this.universalHandler(e.target.name, e.target.value)
+                  }
+                  name="last_name"
+                  value={last_name}
+                  placeholder="Last Name(if charity, leave Blank)"
+                />
+              ) : null}
+
               <input
                 type="password"
                 onChange={e =>
@@ -110,11 +122,13 @@ class FrontPage extends Component {
                   onChange={() => {
                     if (this.state.charity === false) {
                       this.setState({
-                        charity: true
+                        charity: true,
+                        last_name: "Charity"
                       });
                     } else {
                       this.setState({
-                        charity: false
+                        charity: false,
+                        last_name: ""
                       });
                     }
                   }}

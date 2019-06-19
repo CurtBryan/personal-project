@@ -89,7 +89,7 @@ app.get("/api/get_events", getAllEvents);
 app.get("/api/get_event_for_page/:id", getEventForPage);
 app.get("/api/get_future_events/:id", getFutureEvents);
 app.post("/api/add_future_event", addToFutureEvents);
-app.delete("/api/remove_future_event/:id", removeFutureEvent);
+app.delete("/api/remove_future_event/:future_events_id", removeFutureEvent);
 app.get("/api/get_events_attended/:id", getEventsAttended);
 app.post("/api/add_event_attended", addToEventsAttended);
 app.post("/api/add_event", addEvent);

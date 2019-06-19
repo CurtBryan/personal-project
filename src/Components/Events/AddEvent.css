@@ -11,49 +11,39 @@
 }
 
 .demInputs {
-  background-color: #35f18dcb;
-  height: 70vh;
+  height: 80vh;
   width: 70vw;
+  background-color: #ffffffd7;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.demInputs > input {
+.demInputs > input,
+textarea {
   box-sizing: border-box;
   outline: none;
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 7px;
   border: none;
   border-bottom: 1px solid #ddd;
   background: transparent;
   margin-bottom: 10px;
-  font: 16px Arial, Helvetica, sans-serif;
-  height: 45px;
-}
-
-.demInputs > textarea {
-  box-sizing: border-box;
-  outline: none;
-  display: block;
-  width: 100%;
-  padding: 7px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  background: transparent;
-  margin-bottom: 10px;
-  font: 16px Arial, Helvetica, sans-serif;
+  font-family: "Quattrocento Sans", sans-serif;
   height: 45px;
 }
 
 .addEventPageButton {
+  font-family: "Quattrocento Sans", sans-serif;
   width: 100px;
-  border-color: #f34ea7;
+  border-color: #4ef39a;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background-color: #f34ea7;
+  background-color: #4ef39a;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }

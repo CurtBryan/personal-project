@@ -15,6 +15,12 @@ class Header extends React.Component {
     };
   }
 
+  hideMenu = () => {
+    this.setState({
+      showMenu: !this.state.showMenu
+    });
+  };
+
   logout = () => {
     axios.get("/api/logout").then(res => {
       this.props.setUser(null);
@@ -64,8 +70,9 @@ class Header extends React.Component {
                   textDecoration: "none"
                 }}
               >
-                Home
+                <div onClick={this.hideMenu}>Home</div>
               </NavLink>
+
               <NavLink
                 style={{ color: "white" }}
                 activeStyle={{
@@ -76,7 +83,7 @@ class Header extends React.Component {
                 }}
                 to="/events_dir"
               >
-                Events
+                <div onClick={this.hideMenu}>Events</div>
               </NavLink>
               <NavLink
                 style={{ color: "white" }}
@@ -88,8 +95,9 @@ class Header extends React.Component {
                 }}
                 to="/current_user"
               >
-                Profile
+                <div onClick={this.hideMenu}>Profile</div>
               </NavLink>
+
               <NavLink
                 style={{ color: "white" }}
                 activeStyle={{
@@ -100,7 +108,8 @@ class Header extends React.Component {
                 }}
                 to="/contact"
               >
-                Contact
+                {" "}
+                <div onClick={this.hideMenu}>Contact</div>
               </NavLink>
             </div>
           ) : null}

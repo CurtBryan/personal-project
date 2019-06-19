@@ -43,11 +43,37 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  flex-wrap: wrap;
 }
 .eventsCompletedMainContainer > span {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.futureContainer {
+  margin-top: 10px;
+  background-color: rgb(209, 207, 207);
+  height: 200px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.pastContainer {
+  margin-top: 10px;
+  background-color: rgb(209, 207, 207);
+  height: 200px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .futureEventsMainContainer {
@@ -55,9 +81,27 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  flex-wrap: wrap;
 }
 .futureEventsMainContainer > span {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.profilePageButtons > button {
+  text-align: center;
+  font-family: "Quattrocento Sans", sans-serif;
+  color: black;
+  margin-top: 12px;
+  max-height: 4vh;
+  width: 30px;
+  border-color: #4ef39a;
+  border-radius: 50px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #4ef39a;
+}
+
+.profilePageButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
 }

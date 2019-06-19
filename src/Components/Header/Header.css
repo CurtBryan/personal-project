@@ -63,3 +63,18 @@
 .menuButton {
   margin-right: 20px;
 }
+@media (max-width: 426px) {
+  .welcomeHeader {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+  }
+  .headerLinks {
+    height: 50vh;
+    flex-direction: column;
+  }
+}
