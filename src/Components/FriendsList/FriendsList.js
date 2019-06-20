@@ -17,8 +17,18 @@ class FriendsList extends Component {
     });
   };
 
+  deleteFriend = friend_id => {
+    const { user_id } = this.props.profile.user;
+    Axios.delete(`/api/delete_friend/${user_id}?friend_id=${friend_id}`).then(
+      res => {
+        console.log(user_id, friend_id);
+        this.props.setFriendsList(res.data);
+      }
+    );
+  };
+
   render() {
-    console.log(this.props);
+    console.log(this.props.friendsList.friendsList);
     const mappedFriendsList = this.props.friendsList.friendsList.map(
       element => {
         return (
@@ -30,6 +40,9 @@ class FriendsList extends Component {
               </h1>
               <button>
                 <TiMessages />
+              </button>
+              <button onClick={() => this.deleteFriend(element.friend_id)}>
+                Delete From Friends List
               </button>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { setFriendsList } from "../../Ducks/friendsListReducer";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Axios from "axios";
 import "./UsersList.css";
@@ -24,29 +25,13 @@ class UsersList extends Component {
     });
   };
 
-  // pagenationUpHandler = (prop, value) => {
-  //   if (value <= this.state.users.length) {
-  //     this.setState({
-  //       [prop]: value + 3
-  //     });
-  //   } else {
-  //     this.setState({
-  //       [prop]: value
-  //     });
-  //   }
-  // };
-
-  // pagenationDownHandler = (prop, value) => {
-  //   if (value >= 0) {
-  //     this.setState({
-  //       [prop]: value - 3
-  //     });
-  //   } else {
-  //     this.setState({
-  //       [prop]: value
-  //     });
-  //   }
-  // };
+  addFriend = friend_id => {
+    console.log(friend_id);
+    const { user_id } = this.props.profile.user;
+    Axios.post(`/api/add_friend/${user_id}`, { friend_id }).then(res => {
+      this.props.setFriendsList(res.data);
+    });
+  };
 
   render() {
     console.log(this.state);
@@ -60,6 +45,9 @@ class UsersList extends Component {
           <div>
             <h1>{element.first_name}</h1>
           </div>
+          <button onClick={() => this.addFriend(element.user_id)}>
+            Add to Friends List
+          </button>
         </div>
       );
     });
@@ -115,5 +103,12 @@ const mapStateToProps = reduxState => {
   return reduxState;
 };
 
-const invokedConnect = connect(mapStateToProps);
+const mapDispatchToProps = {
+  setFriendsList
+};
+
+const invokedConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 export default invokedConnect(UsersList);
