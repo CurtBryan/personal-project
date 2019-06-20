@@ -1,9 +1,11 @@
 .profileEventPic {
-  height: 15vh;
+  width: 10vw;
 }
 
 .profilePic {
   width: 30vw;
+  margin-top: 20px;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .profileMainBody {
@@ -32,10 +34,12 @@
 }
 
 .userInfoForPage {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 50vw;
+  width: 40vw;
 }
 
 .eventsCompletedMainContainer {
@@ -106,6 +110,10 @@
   width: 100px;
 }
 
+.profileEventPic {
+  /* width: 70%; */
+}
+
 @media (max-width: 426px) {
   .profilePic {
     width: 40vw;
@@ -123,6 +131,9 @@
   .userMainInfo {
     flex-direction: column-reverse;
     align-items: center;
+  }
+  .profileEventPic {
+    width: 25vw;
   }
 }
 

@@ -16,6 +16,13 @@ const {
 const port = SERVER_PORT || 4000;
 
 const {
+  get_all_users,
+  get_friends_list,
+  add_friend,
+  delete_friend
+} = require("./controllers/friendsListController");
+
+const {
   addComment,
   getComments,
   editComment,
@@ -99,5 +106,11 @@ app.get("/api/get_comments/:id", getComments);
 app.post("/api/add_comment", addComment);
 app.put("/api/edit_comment/:id", editComment);
 app.delete("/api/delete_comment/:id", deleteComment);
+
+//friends list logic
+app.get("/api/get_all_users/:id", get_all_users);
+app.get("/api/get_friends_list/:id", get_friends_list);
+app.post("/api/add_friend/:id", add_friend);
+app.delete("/api/delete_friend/:id", delete_friend);
 
 app.listen(port, () => console.log(`server running on port ${port} 🏹`));

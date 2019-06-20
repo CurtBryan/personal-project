@@ -10,6 +10,9 @@ import EventPage from "./Components/Events/EventPage";
 import AddEvent from "./Components/Events/AddEvent";
 import Contact from "./Components/Contact/Contact";
 import CurrentUserProfile from "./Components/CurrentUserProfile/CurrentUserProfile";
+import UserPage from "./Components/Users/UserPage";
+import UsersList from "./Components/Users/UsersList";
+import FriendsList from "./Components/FriendsList/FriendsList";
 // colors mint green #4EF39A light blue #4EF3EC purple #F34EA7
 // font-family: 'Pacifico', cursive;
 // font-family: 'Dancing Script', cursive;
@@ -35,6 +38,9 @@ class App extends React.Component {
             <Route path="/add_event" component={AddEvent} />
             <Route path="/contact" component={Contact} />
             <Route path="/current_user" component={CurrentUserProfile} />
+            <Route path="/friendslist" component={FriendsList} />
+            <Route path="/users" component={UsersList} />
+            <Route path="/userPage" component={UserPage} />
             <Route path="/" component={HomePage} />
           </Switch>
         )}

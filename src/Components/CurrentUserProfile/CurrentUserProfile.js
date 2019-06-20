@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setFutureEvents, setEventsAttended } from "../../Ducks/eventsReducer";
 import "./CurrentUserProfile.css";
 import { MdCheckBox, MdDelete } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 import Axios from "axios";
 
 class CurrentUserProfile extends Component {
@@ -100,6 +101,9 @@ class CurrentUserProfile extends Component {
                   ? first_name + " " + last_name
                   : first_name}
               </h1>
+              <NavLink to="/friendslist">
+                <div className="FriendsListLink">See Friends List</div>
+              </NavLink>
             </div>
           </div>
           <br />

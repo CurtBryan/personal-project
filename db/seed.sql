@@ -40,3 +40,9 @@ create table events_attended(
     user_id integer references users(user_id),
     event_id integer references event(event_id)
 );
+
+create table friends_list(
+    friends_list_id serial primary key,
+    user_id integer references users(user_id)
+    friend_id integer references users(user_id)
+);

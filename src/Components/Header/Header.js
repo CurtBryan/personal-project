@@ -82,7 +82,6 @@ class Header extends React.Component {
               >
                 <div onClick={this.hideMenu}>Profile</div>
               </NavLink>
-
               <NavLink
                 style={{ color: "white" }}
                 activeStyle={{
@@ -95,6 +94,19 @@ class Header extends React.Component {
               >
                 {" "}
                 <div onClick={this.hideMenu}>Contact</div>
+              </NavLink>
+              <NavLink
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+                to="/users"
+              >
+                {" "}
+                <div onClick={this.hideMenu}>Users</div>
               </NavLink>
             </div>
             <button
@@ -163,6 +175,19 @@ class Header extends React.Component {
               >
                 {" "}
                 <div onClick={this.hideMenu}>Contact</div>
+              </NavLink>
+              <NavLink
+                style={{ color: "white" }}
+                activeStyle={{
+                  color: "#28cc9e",
+                  fontWeight: "bolder",
+                  fontSize: "20px",
+                  textDecoration: "none"
+                }}
+                to="/users"
+              >
+                {" "}
+                <div onClick={this.hideMenu}>Users</div>
               </NavLink>
             </div>
           ) : null}
