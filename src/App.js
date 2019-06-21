@@ -13,6 +13,8 @@ import CurrentUserProfile from "./Components/CurrentUserProfile/CurrentUserProfi
 import UserPage from "./Components/Users/UserPage";
 import UsersList from "./Components/Users/UsersList";
 import FriendsList from "./Components/FriendsList/FriendsList";
+// import Messaging from "./Components/Messaging/Messaging";
+
 // colors mint green #4EF39A light blue #4EF3EC purple #F34EA7
 // font-family: 'Pacifico', cursive;
 // font-family: 'Dancing Script', cursive;

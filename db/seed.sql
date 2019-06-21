@@ -46,3 +46,11 @@ create table friends_list(
     user_id integer references users(user_id)
     friend_id integer references users(user_id)
 );
+
+create table messages(
+    message_id serial primary key,
+    user_message text,
+    reciever_message text,
+    user_id integer references users(user_id),
+    friend_id integer references users(user_id)
+);
