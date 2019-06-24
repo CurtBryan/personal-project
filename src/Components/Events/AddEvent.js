@@ -52,7 +52,6 @@ class AddEvent extends Component {
   };
 
   render() {
-    console.log(this.props.profile.user.user_id);
     // const { event_name, date, time, location, info, event_pic } = this.state;
     return (
       <div>

@@ -16,17 +16,29 @@ class UsersList extends Component {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     const { user_id } = this.props.profile.user;
-    Axios.get(`/api/get_all_users/${user_id}`).then(res => {
+    Promise.all([
+      Axios.get(`/api/get_all_users/${user_id}`),
+      Axios.get(`/api/get_friends_list/${user_id}`)
+    ]).then(([res1, res2]) => {
       this.setState({
-        users: res.data
+        users: res1.data
       });
+      this.props.setFriendsList(res2.data);
     });
-  };
+  }
+  // componentDidMount = () => {
+  //   const { user_id } = this.props.profile.user;
+  //   Promise
+  //   Axios.get(`/api/get_all_users/${user_id}`).then(res => {
+  //     this.setState({
+  //       users: res.data
+  //     })
+  //   });
+  // };
 
   addFriend = friend_id => {
-    console.log(friend_id);
     const { user_id } = this.props.profile.user;
     Axios.post(`/api/add_friend/${user_id}`, { friend_id }).then(res => {
       this.props.setFriendsList(res.data);
@@ -34,11 +46,9 @@ class UsersList extends Component {
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.state.users.length);
     const mappedUsers = this.state.users.map(element => {
       return (
-        <div>
+        <div className="userInfoFlex">
           <div>
             <img className="usersPic" src={element.profile_pic} />
           </div>
@@ -51,6 +61,7 @@ class UsersList extends Component {
         </div>
       );
     });
+    console.log(this.props.friendsList.friendsList);
     return (
       <div className="usersListBody">
         <div className="usersListMaincontainer">
@@ -72,15 +83,18 @@ class UsersList extends Component {
             </button>
           </div>
           <div className="usersContainer">
-            <span> {mappedUsers[this.state.userOne]}</span>
-            <span> {mappedUsers[this.state.userTwo]}</span>
-            <span> {mappedUsers[this.state.userThree]}</span>
+            <span className="userBox"> {mappedUsers[this.state.userOne]}</span>
+            <span className="userBox"> {mappedUsers[this.state.userTwo]}</span>
+            <span className="userBox">
+              {" "}
+              {mappedUsers[this.state.userThree]}
+            </span>
           </div>
           <div className="buttonContainer">
             <button>
               <FaArrowRight
                 onClick={() => {
-                  if (this.state.userOne < this.state.users.length - 1) {
+                  if (this.state.userOne < this.state.users.length - 3) {
                     this.setState({
                       userOne: this.state.userOne + 3,
                       userTwo: this.state.userTwo + 3,

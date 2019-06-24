@@ -38,7 +38,6 @@ class Comments extends Component {
     axios
       .put(`/api/edit_comment/${comment_id}`, { message, event_id })
       .then(res => {
-        // console.log("got response", res.data);
         this.props.setComments(res.data);
       });
   };
@@ -49,7 +48,6 @@ class Comments extends Component {
     const { event_id } = this.props;
     axios.post(`/api/add_comment`, { message, user_id, event_id }).then(res => {
       this.props.setComments(res.data);
-      console.log("hit", res.data);
     });
   };
 
@@ -101,7 +99,6 @@ class Comments extends Component {
 
   render() {
     const mappedComments = this.props.comments.comments.map(element => {
-      console.log(element, "mapped element");
       return (
         <div className="commentMappedContainer">
           <div>

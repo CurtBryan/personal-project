@@ -78,6 +78,26 @@ class FrontPage extends Component {
           <div className="frontPageBody">
             <div className="registerContainer">
               <h1>Your Helping Hands</h1>
+              <div className="checkBoxContainer">
+                <p>Are you making a charity account?</p>
+                <input
+                  type="checkbox"
+                  value={this.state.charity}
+                  onChange={() => {
+                    if (this.state.charity === false) {
+                      this.setState({
+                        charity: true,
+                        last_name: "Charity"
+                      });
+                    } else {
+                      this.setState({
+                        charity: false,
+                        last_name: ""
+                      });
+                    }
+                  }}
+                />
+              </div>
               <input
                 onChange={e =>
                   this.universalHandler(e.target.name, e.target.value)
@@ -93,7 +113,7 @@ class FrontPage extends Component {
                   }
                   name="last_name"
                   value={last_name}
-                  placeholder="Last Name(if charity, leave Blank)"
+                  placeholder="Last Name"
                 />
               ) : null}
 
@@ -114,26 +134,7 @@ class FrontPage extends Component {
                 value={email}
                 placeholder="Email"
               />
-              <div className="checkBoxContainer">
-                <p>Check box if you are making a charity account</p>
-                <input
-                  type="checkbox"
-                  value={this.state.charity}
-                  onChange={() => {
-                    if (this.state.charity === false) {
-                      this.setState({
-                        charity: true,
-                        last_name: "Charity"
-                      });
-                    } else {
-                      this.setState({
-                        charity: false,
-                        last_name: ""
-                      });
-                    }
-                  }}
-                />
-              </div>
+
               <input
                 onChange={e =>
                   this.universalHandler(e.target.name, e.target.value)

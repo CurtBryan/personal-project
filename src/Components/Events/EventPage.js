@@ -26,9 +26,7 @@ class EventPage extends Component {
   addEvent = () => {
     const { user_id } = this.props.profile.user;
     const { event_id } = this.state;
-    console.log(user_id, event_id);
     axios.post(`/api/add_future_event`, { user_id, event_id }).then(res => {
-      console.log(res.data);
       this.props.setFutureEvents(res.data);
     });
   };
@@ -46,22 +44,22 @@ class EventPage extends Component {
     return (
       <div className="eventPageBody">
         <div className="eventPageMainContainer">
-          <div className="eventPageContainer">
-            <div className="eventPageImg">
-              <img src={event_pic} />
-            </div>
-            <div className="eventPageInfoContainer">
-              <h1>{event_name}</h1>
-              <h2>Hosted By: {first_name}</h2>
-              <h3>Location: {location}</h3>
-              <h3>Date: {date}</h3>
-              <h3>Time: {time}</h3>
-              <p>Details: {info}</p>
-              <button onClick={() => this.addEvent()}>
-                Add To My Future Events
-              </button>
-              <Comments event_id={this.state.event_id} />
-            </div>
+          <div className="eventPageImg">
+            <img src={event_pic} />
+          </div>
+          <div className="eventPageInfoContainer">
+            <h1>{event_name}</h1>
+            <h2>Hosted By: {first_name}</h2>
+            <h3>Location: {location}</h3>
+            <h3>Date: {date}</h3>
+            <h3>Time: {time}</h3>
+            <p>Details: {info}</p>
+            <button onClick={() => this.addEvent()}>
+              Add To My Future Events
+            </button>
+          </div>
+          <div className="commentsCont">
+            <Comments event_id={this.state.event_id} />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Contact.css";
+import { FaRegGrinAlt } from "react-icons/fa";
 
 class Contact extends Component {
   constructor(props) {
@@ -8,20 +9,25 @@ class Contact extends Component {
     this.state = {
       name: "",
       email: "",
-      message: ""
+      message: "",
+      messageSent: false
     };
   }
 
   handleSubmit = () => {
     const { name, email, message } = this.state;
-    console.log("hit");
     axios.post("/api/form", { name, email, message }).catch(err => {
       console.log(err);
     });
   };
 
+  messageSent = () => {
+    this.setState({
+      messageSent: true
+    });
+  };
+
   render() {
-    // console.log(this.state);
     return (
       <div className="mainContainerContact">
         <div className="contactContainer">
@@ -54,12 +60,21 @@ class Contact extends Component {
             className="contactMessage"
             placeholder="Message"
           />
-          <button
-            onClick={() => this.handleSubmit()}
-            className="sendContactButton"
-          >
-            Send
-          </button>
+          {!this.state.messageSent ? (
+            <button
+              onClick={() => {
+                this.handleSubmit();
+                this.messageSent();
+              }}
+              className="sendContactButton"
+            >
+              Send
+            </button>
+          ) : (
+            <div>
+              Message Sent! <FaRegGrinAlt />{" "}
+            </div>
+          )}
         </div>
       </div>
     );

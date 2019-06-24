@@ -30,7 +30,6 @@ class CurrentUserProfile extends Component {
     Axios.delete(
       `/api/remove_future_event/${future_events_id}?user_id=${user_id}`
     ).then(res => {
-      console.log(res.data);
       this.props.setFutureEvents(res.data);
     });
   };
@@ -52,7 +51,11 @@ class CurrentUserProfile extends Component {
       return (
         <div className="futureContainer">
           <div>
-            <img className="profileEventPic" src={element.event_pic} />
+            <img
+              alt="Future Events Picture"
+              className="profileEventPic"
+              src={element.event_pic}
+            />
           </div>
           <div className="profileEventInfo">
             <h1>{element.event_name}</h1>
@@ -78,7 +81,11 @@ class CurrentUserProfile extends Component {
         return (
           <div className="pastContainer">
             <div>
-              <img className="profileEventPic" src={element.event_pic} />
+              <img
+                alt="events attended pictures"
+                className="profileEventPic"
+                src={element.event_pic}
+              />
             </div>
             <div className="profileEventInfo">
               <h1>{element.event_name}</h1>
@@ -93,7 +100,11 @@ class CurrentUserProfile extends Component {
         <div className="profileContainer">
           <div className="userMainInfo">
             <div className="profilePicContainer">
-              <img className="profilePic" src={profile_pic} />
+              <img
+                alt="profile picture"
+                className="profilePic"
+                src={profile_pic}
+              />
             </div>
             <div className="userInfoForPage">
               <h1 className="username">

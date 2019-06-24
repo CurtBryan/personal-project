@@ -15,7 +15,7 @@
   font-size: 24px;
   height: 50vh;
   width: 30vw;
-  background-color: #4ef3ebc2;
+  background-color: #41d4e7c0;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@
   font-size: 24px;
   height: 80vh;
   width: 30vw;
-  background-color: #4ef3ebc2;
+  background-color: #41d4e7c0;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -105,6 +105,7 @@
 }
 
 .checkBoxContainer > p {
+  margin-top: 5px;
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 14px;
 }

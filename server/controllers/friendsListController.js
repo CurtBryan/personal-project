@@ -19,7 +19,6 @@ module.exports = {
     const db = req.app.get("db");
     db.add_friend([id, friend_id]).then(friend => {
       res.status(200).send(friend);
-      console.log(id, friend_id);
     });
   },
   delete_friend: (req, res, next) => {
@@ -27,7 +26,6 @@ module.exports = {
     const { friend_id } = req.query;
     const db = req.app.get("db");
     db.remove_friend([id, friend_id]).then(friends => {
-      console.log(id, friend_id);
       res.status(200).send(friends);
     });
   }
