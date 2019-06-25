@@ -1,0 +1,49 @@
+.friendsListBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.friendsListCont {
+  height: 100%;
+  width: 80vw;
+  background-color: #ffffffd7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+}
+
+.friendsCont {
+  display: flex;
+  width: 70vw;
+  height: 50vh;
+  justify-content: space-between;
+}
+
+.friendCont {
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.friendInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 20vw;
+}
+
+.friendInfo > img {
+  width: 15vw;
+}
+.friendCont {
+}

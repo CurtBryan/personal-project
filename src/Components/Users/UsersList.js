@@ -61,25 +61,24 @@ class UsersList extends Component {
         </div>
       );
     });
-    console.log(this.props.friendsList.friendsList);
     return (
       <div className="usersListBody">
         <div className="usersListMaincontainer">
           <div className="buttonContainer">
-            <button>
-              <FaArrowLeft
-                onClick={() => {
-                  if (this.state.userOne > 0) {
-                    this.setState({
-                      userOne: this.state.userOne - 3,
-                      userTwo: this.state.userTwo - 3,
-                      userThree: this.state.userThree - 3
-                    });
-                  } else {
-                    return console.log("no more users");
-                  }
-                }}
-              />
+            <button
+              onClick={() => {
+                if (this.state.userOne > 0) {
+                  this.setState({
+                    userOne: this.state.userOne - 3,
+                    userTwo: this.state.userTwo - 3,
+                    userThree: this.state.userThree - 3
+                  });
+                } else {
+                  return console.log("no more users");
+                }
+              }}
+            >
+              <FaArrowLeft />
             </button>
           </div>
           <div className="usersContainer">
@@ -91,20 +90,20 @@ class UsersList extends Component {
             </span>
           </div>
           <div className="buttonContainer">
-            <button>
-              <FaArrowRight
-                onClick={() => {
-                  if (this.state.userOne < this.state.users.length - 3) {
-                    this.setState({
-                      userOne: this.state.userOne + 3,
-                      userTwo: this.state.userTwo + 3,
-                      userThree: this.state.userThree + 3
-                    });
-                  } else {
-                    return console.log("no more users");
-                  }
-                }}
-              />
+            <button
+              onClick={() => {
+                if (this.state.userOne < this.state.users.length - 3) {
+                  this.setState({
+                    userOne: this.state.userOne + 3,
+                    userTwo: this.state.userTwo + 3,
+                    userThree: this.state.userThree + 3
+                  });
+                } else {
+                  return console.log("no more users");
+                }
+              }}
+            >
+              <FaArrowRight />
             </button>
           </div>
         </div>

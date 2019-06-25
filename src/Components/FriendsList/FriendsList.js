@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setFriendsList } from "../../Ducks/friendsListReducer";
 import { TiMessages } from "react-icons/ti";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "./FriendsList.css";
 import Axios from "axios";
 
 class FriendsList extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userOne: 0,
+      userTwo: 1,
+      userThree: 2
+    };
   }
 
   componentDidMount = () => {
@@ -27,11 +33,12 @@ class FriendsList extends Component {
   };
 
   render() {
+    const { userOne, userTwo, userThree } = this.state;
     const mappedFriendsList = this.props.friendsList.friendsList.map(
       element => {
         return (
-          <div>
-            <div>
+          <div className="friendCont">
+            <div className="friendInfo">
               <img src={element.profile_pic} />
               <h1>
                 {element.first_name} {element.last_name}
@@ -45,9 +52,50 @@ class FriendsList extends Component {
       }
     );
     return (
-      <div>
-        <div>
-          <div>{mappedFriendsList}</div>
+      <div className="friendsListBody">
+        <div className="friendsListCont">
+          <div className="buttonContainer">
+            <button
+              onClick={() => {
+                if (this.state.userOne > 0) {
+                  this.setState({
+                    userOne: this.state.userOne - 3,
+                    userTwo: this.state.userTwo - 3,
+                    userThree: this.state.userThree - 3
+                  });
+                } else {
+                  return console.log("no more users");
+                }
+              }}
+            >
+              <FaArrowLeft />
+            </button>
+          </div>
+          <div className="friendsCont">
+            <div>{mappedFriendsList[userOne]}</div>
+            <div>{mappedFriendsList[userTwo]}</div>
+            <div>{mappedFriendsList[userThree]}</div>
+          </div>
+          <div className="buttonContainer">
+            <button
+              onClick={() => {
+                if (
+                  this.state.userOne <
+                  this.props.friendsList.friendsList.length - 3
+                ) {
+                  this.setState({
+                    userOne: this.state.userOne + 3,
+                    userTwo: this.state.userTwo + 3,
+                    userThree: this.state.userThree + 3
+                  });
+                } else {
+                  return console.log("no more users");
+                }
+              }}
+            >
+              <FaArrowRight />
+            </button>
+          </div>
         </div>
       </div>
     );
