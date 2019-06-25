@@ -6,6 +6,7 @@ const session = require("express-session");
 const nodemailer = require("nodemailer");
 
 app.use(express.json());
+app.use(express.static(`${__dirname}/../build`));
 const {
   SERVER_PORT,
   SESSION_SECRET,
@@ -113,4 +114,8 @@ app.get("/api/get_friends_list/:id", get_friends_list);
 app.post("/api/add_friend/:id", add_friend);
 app.delete("/api/delete_friend/:id", delete_friend);
 
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 app.listen(port, () => console.log(`server running on port ${port} 🏹`));
