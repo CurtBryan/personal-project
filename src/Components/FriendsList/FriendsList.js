@@ -44,7 +44,7 @@ class FriendsList extends Component {
                 {element.first_name} {element.last_name}
               </h1>
               <button onClick={() => this.deleteFriend(element.friend_id)}>
-                Delete From Friends List
+                Delete Friend
               </button>
             </div>
           </div>

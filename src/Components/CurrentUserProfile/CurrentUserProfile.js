@@ -39,7 +39,7 @@ class CurrentUserProfile extends Component {
     Promise.all([
       Axios.post("/api/add_event_attended", { user_id, event_id }),
       Axios.delete(`/api/remove_future_event/${future_events_id}`, { user_id })
-    ]).then(([res1, res2]) => {
+    ]).then(([res1, res2, res3]) => {
       this.props.setEventsAttended(res1.data);
       this.props.setFutureEvents(res2.data);
     });
@@ -112,9 +112,11 @@ class CurrentUserProfile extends Component {
                   ? first_name + " " + last_name
                   : first_name}
               </h1>
-              <NavLink to="/friendslist">
-                <div className="FriendsListLink">See Friends List</div>
-              </NavLink>
+              <div className="addEventButton">
+                <NavLink to="/friendslist">
+                  <div className="FriendsListLink">See Friends List</div>
+                </NavLink>
+              </div>
             </div>
           </div>
           <br />

@@ -30,21 +30,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
         {!this.props.profile.user ? (
           <FrontPage />
         ) : (
-          <Switch>
-            <Route path="/events_dir" component={EventsDir} />
-            <Route path="/event_page/:id" component={EventPage} />
-            <Route path="/add_event" component={AddEvent} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/current_user" component={CurrentUserProfile} />
-            <Route path="/friendslist" component={FriendsList} />
-            <Route path="/users" component={UsersList} />
-            <Route path="/userPage" component={UserPage} />
-            <Route path="/" component={HomePage} />
-          </Switch>
+          <div>
+            <Header />
+            <Switch>
+              <Route path="/events_dir" component={EventsDir} />
+              <Route path="/event_page/:id" component={EventPage} />
+              <Route path="/add_event" component={AddEvent} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/current_user" component={CurrentUserProfile} />
+              <Route path="/friendslist" component={FriendsList} />
+              <Route path="/users" component={UsersList} />
+              <Route path="/userPage" component={UserPage} />
+              <Route path="/" component={HomePage} />
+            </Switch>
+          </div>
         )}
       </div>
     );

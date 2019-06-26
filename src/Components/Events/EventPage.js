@@ -10,7 +10,8 @@ class EventPage extends Component {
     super(props);
     this.state = {
       event: [],
-      event_id: this.props.match.params.id
+      event_id: this.props.match.params.id,
+      event_added: false
     };
     this.componentDidMount = this.componentDidMount.bind(this);
   }
@@ -28,6 +29,9 @@ class EventPage extends Component {
     const { event_id } = this.state;
     axios.post(`/api/add_future_event`, { user_id, event_id }).then(res => {
       this.props.setFutureEvents(res.data);
+      this.setState({
+        event_added: true
+      });
     });
   };
 
@@ -44,23 +48,30 @@ class EventPage extends Component {
     return (
       <div className="eventPageBody">
         <div className="eventPageMainContainer">
-          <div className="eventPageImg">
-            <img src={event_pic} />
+          <div className="responsiveFlex">
+            <div className="eventPageImg">
+              <img src={event_pic} />
+            </div>
+            <div className="eventPageInfoContainer">
+              <h1>{event_name}</h1>
+              <h2>Hosted By: {first_name}</h2>
+              <h3>Location: {location}</h3>
+              <h3>Date: {date}</h3>
+              <h3>Time: {time}</h3>
+              <p>Details: {info}</p>
+              {!this.state.event_added ? (
+                <button onClick={() => this.addEvent()}>
+                  Add To My Future Events
+                </button>
+              ) : (
+                <p className="successButton">Event Added!</p>
+              )}
+            </div>
           </div>
-          <div className="eventPageInfoContainer">
-            <h1>{event_name}</h1>
-            <h2>Hosted By: {first_name}</h2>
-            <h3>Location: {location}</h3>
-            <h3>Date: {date}</h3>
-            <h3>Time: {time}</h3>
-            <p>Details: {info}</p>
-            <button onClick={() => this.addEvent()}>
-              Add To My Future Events
-            </button>
-          </div>
-          <div className="commentsCont">
-            <Comments event_id={this.state.event_id} />
-          </div>
+          <Comments
+            className="commentsContainer"
+            event_id={this.state.event_id}
+          />
         </div>
       </div>
     );

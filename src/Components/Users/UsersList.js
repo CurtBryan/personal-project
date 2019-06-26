@@ -16,7 +16,7 @@ class UsersList extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { user_id } = this.props.profile.user;
     Promise.all([
       Axios.get(`/api/get_all_users/${user_id}`),
@@ -27,17 +27,7 @@ class UsersList extends Component {
       });
       this.props.setFriendsList(res2.data);
     });
-  }
-  // componentDidMount = () => {
-  //   const { user_id } = this.props.profile.user;
-  //   Promise
-  //   Axios.get(`/api/get_all_users/${user_id}`).then(res => {
-  //     this.setState({
-  //       users: res.data
-  //     })
-  //   });
-  // };
-
+  };
   addFriend = friend_id => {
     const { user_id } = this.props.profile.user;
     Axios.post(`/api/add_friend/${user_id}`, { friend_id }).then(res => {
@@ -55,8 +45,11 @@ class UsersList extends Component {
           <div>
             <h1>{element.first_name}</h1>
           </div>
-          <button onClick={() => this.addFriend(element.user_id)}>
-            Add to Friends List
+          <button
+            className="addFriendButton"
+            onClick={() => this.addFriend(element.user_id)}
+          >
+            Add Friend
           </button>
         </div>
       );

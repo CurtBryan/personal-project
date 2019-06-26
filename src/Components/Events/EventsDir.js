@@ -3,20 +3,20 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { setEvents } from "../../Ducks/eventsReducer";
 import { NavLink } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./EventsDir.css";
 
 class EventsDir extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.state = { userOne: 0, userTwo: 1, userThree: 2 };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get("/api/get_events").then(res => {
       this.props.setEvents(res.data);
     });
-  }
+  };
 
   render() {
     const allEvents = this.props.events.events.map(element => {
@@ -47,7 +47,46 @@ class EventsDir extends Component {
               <NavLink to="/add_event">Add Event Here!</NavLink>
             </div>
           </div>
-          <div className="eventContainer">{allEvents}</div>
+          <div className="eventContainer">
+            <div className="buttonContainer">
+              <button
+                onClick={() => {
+                  if (this.state.userOne > 0) {
+                    this.setState({
+                      userOne: this.state.userOne - 3,
+                      userTwo: this.state.userTwo - 3,
+                      userThree: this.state.userThree - 3
+                    });
+                  } else {
+                    return console.log("no more users");
+                  }
+                }}
+              >
+                <FaArrowLeft />
+              </button>
+            </div>
+            <div className="datContEvent">{allEvents}</div>
+            <div className="buttonContainer">
+              <button
+                onClick={() => {
+                  if (
+                    this.state.userOne <
+                    this.props.events.events.length - 3
+                  ) {
+                    this.setState({
+                      userOne: this.state.userOne + 3,
+                      userTwo: this.state.userTwo + 3,
+                      userThree: this.state.userThree + 3
+                    });
+                  } else {
+                    return console.log("no more users");
+                  }
+                }}
+              >
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -1,10 +1,13 @@
 .eventPageBody {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .eventPageMainContainer {
   width: 80vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,15 +21,35 @@
   width: 40vw;
 }
 .eventPageInfoContainer {
-  margin-top: 10px;
-  height: 40vh;
+  height: 1000px;
   width: 40vw;
-  /* background-color: springgreen; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.successButton {
+  font-family: "Indie Flower", cursive;
+  font-size: 24px;
+}
+
+.eventPageInfoContainer > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 32px;
+}
+.eventPageInfoContainer > h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+}
+.eventPageInfoContainer > h3 {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 24px;
+}
+.eventPageInfoContainer > p {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 18px;
 }
 
 .eventPageInfoContainer > button {
@@ -39,6 +62,12 @@
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.commentsCont {
-  margin-top: 20px;
+@media (min-width: 1439px) {
+  .responsiveFlex {
+    height: 100vh;
+    display: flex;
+  }
+  .eventPageInfoContainer {
+    height: 80vh;
+  }
 }

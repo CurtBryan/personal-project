@@ -1,20 +1,48 @@
-.eventDirPic {
-  height: 28vh;
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-}
-
 .eventsDirBody {
   display: flex;
   justify-content: center;
-  align-content: center;
-  height: 90vh;
+  align-items: center;
 }
 
 .divEventDirContainer {
-  min-width: 80%;
-  max-width: 80%;
+  height: 100%;
+  width: 80vw;
+  background-color: #ffffffd7;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+}
+
+.eventDirContainer {
+  background-color: white;
+  width: 20vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.eventDirPic {
+  width: 15vw;
+}
+
+.eventContainer {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.datContEvent {
+  display: flex;
+  width: 70vw;
+  height: 50vh;
   justify-content: space-between;
 }
 
@@ -22,63 +50,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.eventContainer {
-  /* background-color: #f34ea7;
-  height: 20vh; */
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-between;
-}
-
-.eventDirContainer {
-  font-family: "Quattrocento Sans", sans-serif;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffffd7;
-  height: 40vh;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  /* background-color: beige; */
-  /* max-width: 1000px; */
-}
-
-.eventDirTitle {
-  height: 20vh;
-  width: 15vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.eventDirDate {
-  width: 10vw;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.eventDirInfo {
-  width: 20vw;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.eventDirPicBox {
-  width: 20vw;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .addEventButton {
@@ -93,29 +64,33 @@
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-@media (max-width: 768px) {
-  .eventDirContainer {
+@media (max-width: 426px) {
+  .addEventButton {
+    margin-top: 10px;
+  }
+  .divEventDirContainer {
+    width: 100vw;
     flex-direction: column;
+  }
+  .eventDirContainer {
+    width: 30vw;
+    margin-top: 10px;
+  }
+  .eventContainer {
+    height: 100vh;
+    width: 100vw;
     justify-content: space-evenly;
-    height: 70vh;
-    width: 80vw;
   }
-  .eventDirInfo,
-  .eventDirTitle,
-  .eventDirDate {
-    width: 60vw;
-    text-align: center;
-    /* background-color: springgreen; */
-    height: 60px;
+  .eventDirInfo > h2 {
+    display: none;
   }
-  .eventDirPicBox {
-    width: 60vw;
-    height: 160px;
+  .datContEvent {
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
   }
-}
-
-@media (max-width: 375px) {
   .eventDirPic {
-    height: 20vh;
+    width: 25vw;
   }
 }
